@@ -1,0 +1,24 @@
+<%- include("templates/head", {
+    titulo: "Formulario",
+    css: "form.css"
+})  %>
+
+    <%- include('./templates/NavBar') %>
+
+    <div class="form">
+        <form class="players" action="">
+            <label>Nombre: <input type="text"></label>
+            <label>Apellido <input type="text"></label>
+            <label>Edad: <input type="number"></label>
+            <label>Nick: <input type="text"></label>
+            <label>Twitter: <input type="url"></label>
+            <label>RangoActual: <input type="text"></label>
+            <label>RangoMaximo: <input type="text"></label>
+            <label>Roles: <input type="text"></label>
+            <label>Experiencia: <input type="text"></label>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    
+
+    <%- include("templates/scripts") %>

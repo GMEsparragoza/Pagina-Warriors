@@ -1,0 +1,179 @@
+body {
+    background-color: #f1af5d;
+    margin: 0;
+}
+
+
+.Presentacion {
+    display: flex;
+    background-color: #504e4e;
+    border: 5px solid #1a1919;
+    align-items: center;
+    height: 600px;
+    width: 90%;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+#video-presentacion {
+    height: 480px;
+    width: 640px;
+}
+
+.Texto-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.titulo{
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.texto {
+    font-size: 20px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+#Postulaciones {
+    background-color: #cbcbcb;
+}
+
+.PostulacionesHTML {
+    display: flex;
+    align-items: center;
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.Post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    width: calc(33% - 60px);
+    border: 1px solid #f00;
+    border-radius: 20px;
+    background-color: #111111;
+    padding: 10px;
+}
+
+.Post img {
+    height: auto;
+    width: 100px;
+    margin: 20px;
+    border: 2px solid #111111;
+    border-radius: 50%;
+}
+
+.Post h2 {
+    color: #f1af5d;
+    font-size: 25px;
+    margin: 10px;
+}
+
+.Post h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.Post p {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px auto;
+    margin: 10px;
+}
+
+.Requisitos {
+    padding: 20px;
+}
+
+
+.Post button {
+    background-color: #f1af5d; /* Fondo dorado */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor a mano */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.Post button:hover {
+    background-color: #000; /* Fondo negro al hacer hover */
+    color: #f1af5d; /* Texto dorado al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+}
+
+.Post button:active {
+    background-color: #fff; /* Fondo blanco al hacer click */
+    color: #000; /* Texto negro al hacer click */
+    box-shadow: none; /* Sin sombra al hacer click */
+}
+
+.Post a {
+    text-decoration: none;
+    border: none;
+    font-size: 30px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    color: #fff; /* Texto en blanco */
+    background-color: none;
+}
+
+
+
+
+
+
+/* Esto @media nos permite que cuando un celular o tablet entre a la pagina, se oculte la navbar exceptuando el logo y el "abrir" de la side bar, asi solo se usa la side bar*/
+
+@media(max-width: 800px){
+    main {
+        display: none;
+    }
+    #Separador{
+        display: none;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .logo img:hover{
+        transform: scale(1.0);
+    }
+    .nav-titulo:hover{
+        transform: scale(1.0);
+    }
+    .side-nav-titulo:hover{
+        transform: scale(1.0);
+    }
+    .hideOnmobile{
+        display: none;
+    }
+    .Boton-SideBar {
+        display: flex;
+    }
+    .Postulaciones {
+        flex-direction: column; /* Cambia la dirección a columna */
+    }
+    .Post {
+        width: 100%; /* Las tarjetas ocuparán todo el ancho del contenedor */
+        margin: 10px 0; /* Menos margen entre las tarjetas */
+    }
+    .Post button:hover {
+        border: none;
+        border-radius: 0;
+        background-color: #111111;
+        transform: scale(1.0);
+    }
+}

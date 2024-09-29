@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+}
+
+.form {
+    display: flex;
+    background-color: #fff;
+    border: 2px solid red;
+    border-radius: 20px;
+    width: 30%;
+    margin: auto;
+    justify-content: start;
+    padding: 20px;
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+}
+
+.players label {
+    font-size: 20px;
+    padding: 10px;
+    color: #000000;
+}
+
+.players input {
+    width: 100%;
+    font-size: 20px;
+    height: 30px;
+    font-weight: bolder;
+}
+
+.players button {
+    background-color: #f1af5d; /* Fondo dorado */
+    color: #fff; /* Texto en blanco */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    cursor: pointer; /* Cambia el cursor a mano */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.players button:hover {
+    background-color: #000; /* Fondo negro al hacer hover */
+    color: #f1af5d; /* Texto dorado al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+}
+
+.players button:active {
+    background-color: #fff; /* Fondo blanco al hacer click */
+    color: #000; /* Texto negro al hacer click */
+    box-shadow: none; /* Sin sombra al hacer click */
+}
