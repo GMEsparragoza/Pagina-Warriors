@@ -1,0 +1,41 @@
+<%- include("templates/head", {
+    titulo: "admin",
+    css: "sesion.css"
+}) %>
+
+<%- include('templates/NavBar') %>
+
+    <section id="auth-section" class="auth-section">
+        <div class="container">
+            <form id="loginForm" class="input-group">
+                <h1 class="admin">Bienvenido al Area de Administracion</h1>
+                <div class="menuCerrar">
+                     <h2>Usuario Conectado es: <strong><%- User %></strong></h2>
+                    <a href="/logout" class="submit-btn" id="boton-logout">Cerrar Sesion</a>
+                </div>
+                <div class="menuxLog">
+                    <h2><strong>No estas Logueado</strong></h2>
+                    <a href="/login" class="submit-btn">Ir al Login</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        if(localStorage.sesionIniciada){
+            console.log("local");
+        }
+        else{
+            if(<%- sesionIniciada %>){
+                localStorage.setItem("sesionIniciada", true);
+                localStorage.setItem("usuario", "<%- User %>");
+                localStorage.setItem("idAdmin", <%- idAdmin %>);
+                localStorage.setItem("password", "<%- password %>")
+            }
+            else{
+                console.log("Sin cuenta");
+            }
+        }
+    </script>
+    <script src="scripts/admin.js"></script>
+</body>
+</html>

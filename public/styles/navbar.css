@@ -43,7 +43,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 0.5rem;
 }
 
 .logo img{
@@ -231,5 +231,26 @@
 }
 
 #navbar {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 1050px){
+    .sidebar {
+        width: 100%;
+    }
+    .logo img:hover{
+        transform: scale(1.0);
+    }
+    .nav-titulo:hover{
+        transform: scale(1.0);
+    }
+    .side-nav-titulo:hover{
+        transform: scale(1.0);
+    }
+    .hideOnmobile{
+        display: none;
+    }
+    .Boton-SideBar {
+        display: flex;
+    }
 }

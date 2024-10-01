@@ -100,69 +100,34 @@ body {
 }
 
 
-.Post button {
-    background-color: #f1af5d; /* Fondo dorado */
-    border: 2px solid #000; /* Borde negro */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 10px 20px; /* Espaciado interno */
-    cursor: pointer; /* Cambia el cursor a mano */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+.btn-post {
+    width: 100%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
 }
-
-.Post button:hover {
-    background-color: #000; /* Fondo negro al hacer hover */
-    color: #f1af5d; /* Texto dorado al hacer hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
-}
-
-.Post button:active {
-    background-color: #fff; /* Fondo blanco al hacer click */
-    color: #000; /* Texto negro al hacer click */
-    box-shadow: none; /* Sin sombra al hacer click */
-}
-
-.Post a {
-    text-decoration: none;
-    border: none;
-    font-size: 30px; /* Tamaño de la fuente */
-    font-weight: bold; /* Texto en negrita */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    color: #fff; /* Texto en blanco */
-    background-color: none;
-}
-
-
 
 
 
 
 /* Esto @media nos permite que cuando un celular o tablet entre a la pagina, se oculte la navbar exceptuando el logo y el "abrir" de la side bar, asi solo se usa la side bar*/
 
-@media(max-width: 800px){
+@media(max-width: 1050px){
     main {
         display: none;
     }
     #Separador{
         display: none;
     }
-    .sidebar {
-        width: 100%;
-    }
-    .logo img:hover{
-        transform: scale(1.0);
-    }
-    .nav-titulo:hover{
-        transform: scale(1.0);
-    }
-    .side-nav-titulo:hover{
-        transform: scale(1.0);
-    }
-    .hideOnmobile{
-        display: none;
-    }
-    .Boton-SideBar {
-        display: flex;
-    }
+    
     .Postulaciones {
         flex-direction: column; /* Cambia la dirección a columna */
     }

@@ -3,21 +3,21 @@
     css: "index.css"
 })  %>
     
-    <%- include('templates/NavBar') %>
+<%- include('templates/NavBar') %>
+
+  
 
     <main>
         <div class="Presentacion">
-            <video id="video-presentacion" src="https://www.youtube.com/watch?v=7-4dY9UQPiQ" controls></video>
+             <video id="video-presentacion" src="https://www.youtube.com/watch?v=7-4dY9UQPiQ" controls></video>
         </div>
     </main>
     <hr id="Separador">
     <section class="Texto-main">
         <h1 class="titulo">LET'S BE WARRIORS</h1>
-        <p class="texto">Warriors Esports nace con la ambición de conquistar los más altos niveles en el competitivo mundo de los videojuegos. Nuestro equipo está formado por jugadores talentosos y dedicados que comparten una pasión por la excelencia y el deseo de dejar huella en cada torneo. Inspirados por la disciplina, el trabajo en equipo y la resiliencia de los guerreros legendarios, buscamos no solo ganar, sino también elevar el estándar del juego competitivo. Nuestro objetivo es construir una organización sólida, que fomente el crecimiento personal y profesional de nuestros miembros, y nos permita convertirnos en referentes dentro de la escena de los e-sports a nivel mundial. Con determinación, compromiso y visión de futuro, los Warriors Esports están listos para llegar a lo más alto.</p>
+           <p class="texto">Warriors Esports nace con la ambición de conquistar los más altos niveles en el competitivo mundo de los videojuegos. Nuestro equipo está formado por jugadores talentosos y dedicados que comparten una pasión por la excelencia y el deseo de dejar huella en cada torneo. Inspirados por la disciplina, el trabajo en equipo y la resiliencia de los guerreros legendarios, buscamos no solo ganar, sino también elevar el estándar del juego competitivo. Nuestro objetivo es construir una organización sólida, que fomente el crecimiento personal y profesional de nuestros miembros, y nos permita convertirnos en referentes dentro de la escena de los e-sports a nivel mundial. Con determinación, compromiso y visión de futuro, los Warriors Esports están listos para llegar a lo más alto.</p>
     </section>
-
-    
-
+        
     <section id="Postulaciones">
         <div class="PostulacionesHTML">
         </div>
@@ -25,9 +25,15 @@
 
 
     <script>
+        localStorage.setItem("post0", "<%- Post[0] %>");
+        localStorage.setItem("post1", "<%- Post[1] %>");
+        localStorage.setItem("post2", "<%- Post[2] %>");
         //llamamos los objetos de la base de datos
         let listaPostulaciones=[];
-        listaPostulaciones = <%- JSON.stringify(Post) %>;
+        listaPostulaciones[0] = localStorage.getItem("post0");
+        listaPostulaciones[1] = localStorage.getItem("post1");
+        listaPostulaciones[2] = localStorage.getItem("post2");
     </script>
-
-    <%- include("templates/scripts") %>
+    
+    <script src="scripts/Postulaciones.js"></script>
+    <%- include("templates/footer") %>

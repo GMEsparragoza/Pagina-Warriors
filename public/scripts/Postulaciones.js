@@ -17,7 +17,7 @@ const cargarPostulaciones = (Post) => {
                 <p>Disponibilidad Horaria</p>
                 <p>${postplayers.horario}</p>
             </div>
-            <button><a href="http://localhost:3000/Formulario">Postulate</a></button>
+            <a href="http://localhost:3000/Formulario"><input type="button" class="btn-post" value="Postulate"></a>
         </div>`
     });
 }

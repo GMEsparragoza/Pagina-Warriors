@@ -1,0 +1,28 @@
+<%- include("templates/head", {
+    titulo: "Login",
+    css: "sesion.css"
+})  %>
+
+<%- include('templates/NavBar') %>
+
+    <%- include("templates/loginForm") %>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+            }).then(() => {
+                window.location = '/<%=ruta%>'
+            })
+        </script>
+    <% } %>
+
+</body>
+</html>
