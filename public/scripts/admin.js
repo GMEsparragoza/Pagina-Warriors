@@ -1,18 +1,18 @@
-const sesionIniciada = localStorage.getItem("sesionIniciada");
-const menuCerrar = document.querySelector(".menuCerrar");
-const menuxLog = document.querySelector(".menuxLog");
-const botonLogout = document.querySelector("#boton-logout");
+const menuCerrar = document.getElementsByClassName("menuCerrar")[0]; // Accediendo al primer elemento
+const menuxLog = document.getElementsByClassName("menuxLog")[0];     // Accediendo al primer elemento
+const nombre = document.getElementById("nombre");
+const usuario = localStorage.getItem("usuario");
 
-
-if(sesionIniciada == 'true'){
-    menuCerrar.style.display = 'block';
-    menuxLog.style.display = 'none';
+if (sesionIniciada == 'true') {
+    if (menuCerrar) menuCerrar.style.display = 'block';
+    if (menuxLog) menuxLog.style.display = 'none';
+    if (nombre) nombre.innerHTML = usuario;
+} else {
+    if (menuCerrar) menuCerrar.style.display = 'none';
+    if (menuxLog) menuxLog.style.display = 'block';
 }
-else {
-    menuCerrar.style.display = 'none';
-    menuxLog.style.display = 'block';
-}
-
-botonLogout.addEventListener("click", () => {
+const CerrarSesion = () => {
     localStorage.clear();
-})
+}
+
+

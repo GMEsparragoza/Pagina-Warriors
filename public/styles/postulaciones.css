@@ -4,44 +4,6 @@ body {
 }
 
 
-.Presentacion {
-    display: flex;
-    background-color: #504e4e;
-    border: 5px solid #1a1919;
-    align-items: center;
-    height: 600px;
-    width: 90%;
-    margin: 50px auto;
-    justify-content: center;
-}
-
-#video-presentacion {
-    height: 480px;
-    width: 640px;
-}
-
-.Texto-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-}
-
-.titulo{
-    display: flex;
-    font-size: 30px;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-}
-
-.texto {
-    font-size: 20px;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-}
-
 #Postulaciones {
     background-color: #cbcbcb;
     width: 95%;
@@ -132,14 +94,7 @@ body {
 
 /* Esto @media nos permite que cuando un celular o tablet entre a la pagina, se oculte la navbar exceptuando el logo y el "abrir" de la side bar, asi solo se usa la side bar*/
 
-@media(max-width: 1050px){
-    main {
-        display: none;
-    }
-    #Separador{
-        display: none;
-    }
-    
+@media(max-width: 1050px){  
     .Post button:hover {
         border: none;
         border-radius: 0;

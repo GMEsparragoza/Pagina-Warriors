@@ -2,6 +2,11 @@
     titulo: "Inicio",
     css: "index.css"
 })  %>
+
+<script>
+    let listaPostulaciones=[];
+    listaPostulaciones = <%- JSON.stringify(Post) %>;
+</script>
     
 <%- include('templates/NavBar') %>
 
@@ -23,17 +28,5 @@
         </div>
     </section>
 
-
-    <script>
-        localStorage.setItem("post0", "<%- Post[0] %>");
-        localStorage.setItem("post1", "<%- Post[1] %>");
-        localStorage.setItem("post2", "<%- Post[2] %>");
-        //llamamos los objetos de la base de datos
-        let listaPostulaciones=[];
-        listaPostulaciones[0] = localStorage.getItem("post0");
-        listaPostulaciones[1] = localStorage.getItem("post1");
-        listaPostulaciones[2] = localStorage.getItem("post2");
-    </script>
-    
     <script src="scripts/Postulaciones.js"></script>
     <%- include("templates/footer") %>

@@ -3,26 +3,42 @@
     css: "sesion.css"
 })  %>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<% if(typeof alert != "undefined") { %>
+    <script>
+        Swal.fire({
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: <%= showConfirmButton %>,
+            timer: <%= timer %>
+        }).then(() => {
+            window.location = '/<%=ruta%>'
+        })
+    </script>
+<% } %>
+
 <%- include('templates/NavBar') %>
 
-    <%- include("templates/loginForm") %>
+<section id="auth-section" class="auth-section">
+    <div class="container">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <input type="button" value="Iniciar Sesión" class="toggle-btn">
+            </div>
+            <form id="loginForm" class="input-group" action="/auth" method="POST">
+                <input type="text" name="user" class="input-field" placeholder="Usuario">
+                <input type="password" name="password" class="input-field" placeholder="Contraseña">
+                <input type="submit" class="submit-btn" value="Iniciar Sesión">
+                <p class="error escondido">Error al iniciar sesion</p>
+            </form>
+        </div>
+    </div>
+</section>
 
     
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <% if(typeof alert != "undefined") { %>
-        <script>
-            Swal.fire({
-                title: '<%= alertTitle %>',
-                text: '<%= alertMessage %>',
-                icon: '<%= alertIcon %>',
-                showConfirmButton: <%= showConfirmButton %>,
-                timer: <%= timer %>
-            }).then(() => {
-                window.location = '/<%=ruta%>'
-            })
-        </script>
-    <% } %>
 
 </body>
 </html>

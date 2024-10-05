@@ -3,6 +3,23 @@
     css: "form.css"
 })  %>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+            }).then(() => {
+                window.location = '/<%=ruta%>'
+            })
+        </script>
+    <% } %>
+    
+
 <%- include('templates/NavBar') %>
     
     <section id="auth-section" class="auth-section">
@@ -49,21 +66,6 @@
     </section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    <% if(typeof alert != "undefined") { %>
-        <script>
-            Swal.fire({
-                title: '<%= alertTitle %>',
-                text: '<%= alertMessage %>',
-                icon: '<%= alertIcon %>',
-                showConfirmButton: <%= showConfirmButton %>,
-                timer: <%= timer %>
-            }).then(() => {
-                window.location = '/<%=ruta%>'
-            })
-        </script>
-    <% } %>
-    
     <script src="scripts/selecForm.js"></script>
+    
     <%- include("templates/footer") %>

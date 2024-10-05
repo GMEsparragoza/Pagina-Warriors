@@ -1,0 +1,18 @@
+<%- include("templates/head", {
+    titulo: "Perfil",
+    css: "perfil.css"
+}) %>
+
+<script>
+    let Usuario;
+    Usuario = <%- JSON.stringify(Gente) %>;
+    console.log(Usuario);
+</script>
+
+<%- include('templates/NavBar') %>
+
+<h1 class="ashe"></h1>
+
+<script src="/scripts/perfil.js"></script>
+
+<%- include("templates/footer") %>

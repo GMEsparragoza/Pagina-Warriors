@@ -3,6 +3,25 @@
     css: "sesion.css"
 }) %>
 
+<script>
+    if(localStorage.sesionIniciada){
+        console.log("local");
+        console.log(localStorage);
+    }
+    else{
+        if(<%- sesionIniciada %>){
+            localStorage.setItem("sesionIniciada", true);
+            localStorage.setItem("usuario", "<%- User %>");
+            localStorage.setItem("idAdmin", <%- idAdmin %>);
+            localStorage.setItem("email", "<%- email %>")
+            console.log("AmaZeyn")
+        }
+        else{
+            console.log("Sin cuenta");
+        }
+    }
+</script>
+
 <%- include('templates/NavBar') %>
 
     <section id="auth-section" class="auth-section">
@@ -10,8 +29,8 @@
             <form id="loginForm" class="input-group">
                 <h1 class="admin">Bienvenido al Area de Administracion</h1>
                 <div class="menuCerrar">
-                     <h2>Usuario Conectado es: <strong><%- User %></strong></h2>
-                    <a href="/logout" class="submit-btn" id="boton-logout">Cerrar Sesion</a>
+                     <h2>Usuario Conectado es:</h2><h2 id="nombre"></h2>
+                    <a href="/logout" class="submit-btn" id="logout" onclick="CerrarSesion()">Cerrar Sesion</a>
                 </div>
                 <div class="menuxLog">
                     <h2><strong>No estas Logueado</strong></h2>
@@ -20,22 +39,9 @@
             </form>
         </div>
     </section>
-    <script>
-        if(localStorage.sesionIniciada){
-            console.log("local");
-        }
-        else{
-            if(<%- sesionIniciada %>){
-                localStorage.setItem("sesionIniciada", true);
-                localStorage.setItem("usuario", "<%- User %>");
-                localStorage.setItem("idAdmin", <%- idAdmin %>);
-                localStorage.setItem("password", "<%- password %>")
-            }
-            else{
-                console.log("Sin cuenta");
-            }
-        }
-    </script>
-    <script src="scripts/admin.js"></script>
+    
+    
+    
 </body>
+<script src="scripts/admin.js"></script>
 </html>
