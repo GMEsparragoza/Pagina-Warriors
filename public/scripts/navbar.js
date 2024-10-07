@@ -8,13 +8,41 @@ function hideSidebar(){
 }
 
 const sesionIniciada = localStorage.getItem("sesionIniciada");
-const boton = document.getElementById("boton");
+const botonSide = document.querySelector(".botonSide");
+const botonNav = document.querySelector(".botonNav");
 
 if(sesionIniciada == 'true'){
-    boton.innerText = "Admin";
-    boton.href = '/admin';
+    botonNav.innerText = "Admin";
+    botonNav.href = '/admin';
+    botonSide.innerText = "Admin";
+    botonSide.href = '/admin';
 }
 else {
-    boton.innerText = "Iniciar Sesion";
-    boton.href = '/login';
+    botonNav.innerText = "Iniciar Sesion";
+    botonNav.href = '/login';
+    botonSide.innerText = "Iniciar Sesion";
+    botonSide.href = '/login';
+}
+
+const usuario = localStorage.getItem("usuario");
+const idAdmin = localStorage.getItem("idAdmin");
+const email = localStorage.getItem("email");
+window.onload = () => {
+    if(sesionIniciada && !sesionIniciadaServidor){
+        fetch('/sincronizarSesion', {
+            method: "Post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idAdmin: idAdmin,
+                usuario: usuario,
+                email: email
+            })
+        }).then(response => {
+            if(response.ok){
+                location.reload();
+            }
+        });
+    }
 }

@@ -1,3 +1,21 @@
+<script>
+    const sesionIniciadaServidor = <%- sesionIniciada %>;
+    if(localStorage.sesionIniciada){
+        console.log("local");
+    }
+    else{
+        if(sesionIniciadaServidor){
+            localStorage.setItem("sesionIniciada", true);
+            localStorage.setItem("usuario", "<%- User %>");
+            localStorage.setItem("idAdmin", <%- idAdmin %>);
+            localStorage.setItem("email", "<%- email %>");
+        }
+        else{
+            console.log("Sin cuenta");
+        }
+    }
+</script>
+
 <nav id="navbar">
     <ul class="sidebar">
         <div class="logo">
@@ -8,7 +26,7 @@
         <li><a class="side-nav-titulo" href="/">Inicio</a></li>
         <li><a class="side-nav-titulo" href="/Equipos">Equipos</a></li>
         <li><a class="side-nav-titulo" href="/Postulaciones">Postulaciones</a></li>
-        <li><a class="side-nav-titulo" href="/login">Iniciar Sesion</a></li>
+        <li><a class="side-nav-titulo botonSide" href="/login">Iniciar Sesion</a></li>
     </ul>
     <div class="navbar">
         <div class="logo">
@@ -19,7 +37,7 @@
             <li class="hideOnmobile"><a class="nav-titulo" href="/">Inicio</a></li>
             <li class="hideOnmobile"><a class="nav-titulo" href="/Equipos">Equipos</a></li>
             <li class="hideOnmobile"><a class="nav-titulo" href="/Postulaciones">Postulaciones</a></li>
-            <li class="hideOnmobile"><a class="nav-titulo" id="boton" href="/login">Iniciar Sesion</a></li>
+            <li class="hideOnmobile"><a class="nav-titulo botonNav" href="/login">Iniciar Sesion</a></li>
             <li class="Boton-SideBar" onclick=showSidebar()>
                 <div class="menu-icon">
                     <div class="bar"></div>
@@ -30,5 +48,4 @@
         </ul>
     </div>
 </nav>
-
 <script src="/scripts/navbar.js"></script>

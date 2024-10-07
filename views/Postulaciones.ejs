@@ -4,8 +4,10 @@
 }) %>
 
 <script>
-    let listaPostulaciones=[];
-    listaPostulaciones = <%- JSON.stringify(Post) %>;
+    let listaPostulacionesPlayers=[];
+    listaPostulacionesPlayers = <%- JSON.stringify(PostPlayers) %>;
+    let listaPostulacionesStaff=[];
+    listaPostulacionesStaff = <%- JSON.stringify(PostStaff) %>;
 </script>
 
 <%- include('templates/NavBar') %>
@@ -15,5 +17,5 @@
     </div>
 </section>
 
-<script src="scripts/Postulaciones.js"></script>
+<script src="/scripts/Postulaciones.js"></script>
 <%- include("templates/footer") %>

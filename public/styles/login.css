@@ -9,19 +9,11 @@ body{
 }
 
 .auth-section {
-    height: 30vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid #f1af5d;
-}
-
-.Post-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 .container {
@@ -41,13 +33,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-
-.titulo-form {
-    color: #fff;
-    font-size: 16px;
-    margin-bottom: 20px;
 }
 
 .button-box {
@@ -73,11 +58,11 @@ body{
     font-weight: bolder;
 }
 
-#btn-validar {
+#btn {
     top: 0;
     left: 0;
     position: absolute;
-    width: 110px;
+    width: 100%;
     height: 100%;
     background: linear-gradient(to right, #fab764, #f6a43e);
     border-radius: 30px;
@@ -123,40 +108,10 @@ body{
     text-align: center;
 }
 
-.admin {
-    color: #fff;
-    text-align: center;
-    border-bottom: 2px solid #f1af5d;
-}
-
-
-.menuCerrar h2 {
-    color: #fff;
-    text-align: center;
-    margin: 15px;
-}
-
-
-.Post-section {
-    border-bottom: 3px solid #f1af5d;
-    padding: 20px;
-    margin: 20px auto;
-}
-
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-}
-
-.group-posts {
-    width: 100%;
-    transition: .5s;
-    display: none;
-}
-
-.group-posts.active {
-    display: block;
 }
 
 .field-posts {
@@ -176,82 +131,10 @@ input[type="number"]::-webkit-inner-spin-button {
     color: rgba(255, 255, 255, 0.7);
 }
 
-#butPlayerValidar {
-    color: #000000;
+#butPlayer {
+    color: #000;
 }
 
-#butStaffValidar {
+#butStaff {
     color: #edededcd;
-}
-
-#butPlayerValidar:hover {
-    cursor: pointer;
-}
-
-#butStaffValidar:hover {
-    cursor: pointer;
-}
-
-
-#btn-Modificar {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 110px;
-    height: 100%;
-    background: linear-gradient(to right, #fab764, #f6a43e);
-    border-radius: 30px;
-    transition: .5s;
-}
-
-#butPlayerModificar {
-    color: #000000;
-}
-
-#butStaffModificar {
-    color: #edededcd;
-}
-
-#butPlayerModificar:hover {
-    cursor: pointer;
-}
-
-#butStaffModificar:hover {
-    cursor: pointer;
-}
-
-
-
-#btn-Eliminar {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 110px;
-    height: 100%;
-    background: linear-gradient(to right, #fab764, #f6a43e);
-    border-radius: 30px;
-    transition: .5s;
-}
-
-#butPlayerEliminar {
-    color: #000000;
-}
-
-#butStaffEliminar {
-    color: #edededcd;
-}
-
-#butPlayerEliminar:hover {
-    cursor: pointer;
-}
-
-#butStaffEliminar:hover {
-    cursor: pointer;
-}
-
-
-@media (max-width: 768px){
-    .container{
-    margin: 20px 0;
-    }
 }

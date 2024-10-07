@@ -4,21 +4,39 @@ body {
 }
 
 
-.Presentacion {
+.presentacion-container {
     display: flex;
-    background-color: #504e4e;
-    border: 5px solid #1a1919;
-    align-items: center;
-    height: 600px;
-    width: 90%;
-    margin: 50px auto;
     justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #000;
+}
+
+.presentacion {
+    position: relative;
+    width: 90%;
+    max-width: 960px;
+    background-color: #F1AF5D;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.presentacion::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
 #video-presentacion {
-    height: 480px;
-    width: 640px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
+
 
 .Texto-main{
     display: flex;
@@ -52,13 +70,13 @@ body {
 
 .PostulacionesHTML {
     display: flex;
-    justify-content: center; /* Centra las tarjetas */
-    align-items: flex-start;
+    justify-content: center;
+    align-items: stretch; /* Cambiado de flex-start a stretch */
     margin: 40px auto;
     padding: 20px;
     width: 80%;
     flex-wrap: wrap;
-    gap: 30px; /* Espacio entre tarjetas */
+    gap: 30px;
     box-sizing: border-box;
 }
 
@@ -66,25 +84,31 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0; /* Elimina márgenes excesivos */
-    flex-basis: calc(33.333% - 20px); /* 3 tarjetas por fila con espacio entre ellas */
+    margin: 0;
+    flex-basis: calc(33.333% - 20px);
     border: 1px solid #f00;
     border-radius: 20px;
     background-color: #111111;
     padding: 20px;
-    box-sizing: border-box; /* Asegura que padding y bordes se incluyan en el tamaño */
+    box-sizing: border-box;
 }
 
 /* Media queries para hacer el diseño responsive */
 @media (max-width: 1092px) {
     .Post {
-        flex-basis: calc(50% - 20px); /* 2 tarjetas por fila en pantallas medianas */
+        flex-basis: calc(50% - 20px);
     }
 }
 
 @media (max-width: 768px) {
     .Post {
-        flex-basis: 100%; /* 1 tarjeta por fila en pantallas pequeñas */
+        flex-basis: 100%;
+    }
+    .presentacion {
+        width: 95%;
+    }
+    .PostulacionesHTML{
+        width: 95%;
     }
 }
 
@@ -98,9 +122,17 @@ body {
 
 .Post h2, .Post h3 {
     color: #f1af5d;
-    font-size: 25px;
     margin: 10px 0;
     text-align: center;
+}
+
+.Post h2 {
+    font-size: 35px;
+    border-bottom: 3px solid #f1af5d;
+}
+
+.Post h3 {
+    font-size: 25px;
 }
 
 .Post p {
@@ -112,6 +144,9 @@ body {
 
 .Requisitos {
     padding: 20px;
+    flex-grow: 1; /* Añadido para que ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
 }
 
 .btn-post {
@@ -126,24 +161,4 @@ body {
     color: #fff;
     font-weight: bold;
     font-size: 30px;
-}
-
-
-
-/* Esto @media nos permite que cuando un celular o tablet entre a la pagina, se oculte la navbar exceptuando el logo y el "abrir" de la side bar, asi solo se usa la side bar*/
-
-@media(max-width: 1050px){
-    main {
-        display: none;
-    }
-    #Separador{
-        display: none;
-    }
-    
-    .Post button:hover {
-        border: none;
-        border-radius: 0;
-        background-color: #111111;
-        transform: scale(1.0);
-    }
 }

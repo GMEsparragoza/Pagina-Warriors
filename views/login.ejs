@@ -1,6 +1,6 @@
 <%- include("templates/head", {
     titulo: "Login",
-    css: "sesion.css"
+    css: "login.css"
 })  %>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -15,7 +15,7 @@
             timer: <%= timer %>
         }).then(() => {
             window.location = '/<%=ruta%>'
-        })
+        });
     </script>
 <% } %>
 
@@ -29,16 +29,13 @@
                 <input type="button" value="Iniciar Sesión" class="toggle-btn">
             </div>
             <form id="loginForm" class="input-group" action="/auth" method="POST">
-                <input type="text" name="user" class="input-field" placeholder="Usuario">
+                <input type="email" name="email" class="input-field" placeholder="Email">
                 <input type="password" name="password" class="input-field" placeholder="Contraseña">
                 <input type="submit" class="submit-btn" value="Iniciar Sesión">
-                <p class="error escondido">Error al iniciar sesion</p>
             </form>
         </div>
     </div>
 </section>
-
-    
 
 </body>
 </html>

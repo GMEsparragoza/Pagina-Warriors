@@ -2,7 +2,7 @@ const PostulacionesHTML = document.querySelector(".PostulacionesHTML")
 
 const cargarPostulacionesPlayers = (PostPlayers) => {
     let content = '';
-    PostPlayers.forEach(Post => {
+    PostPlayers.slice(0, 2).forEach(Post => {
         content += `<div class="Post">
             <img src="../img/Logo Warriors.jpeg" alt="Logo">
             <h2>Player</h2>
@@ -23,7 +23,7 @@ const cargarPostulacionesPlayers = (PostPlayers) => {
 
 const cargarPostulacionesStaff = (PostStaff) => {
     let content = '';
-    PostStaff.forEach(Post => {
+    PostStaff.slice(0, 2).forEach(Post => {
         content += `<div class="Post">
             <img src="../img/Logo Warriors.jpeg" alt="Logo">
             <h2>Staff Tecnico</h2>
